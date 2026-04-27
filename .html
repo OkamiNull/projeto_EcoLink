@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".css">
+    <title>EcoLink - Eventos Ecológicos</title>
+    <link rel="shortcut icon" href="files\logo.jpeg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>♻️ EcoLink</h2>
+        </div>
+        <nav>
+            <a href=".html">Início</a>
+            <a href="#">Eventos</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Conecte-se com o Planeta</h1>
+        <p>Participe de eventos, mutirões e workshops focados na preservação ambiental.</p>
+    </section>
+
+    <main class="container">
+        <div class="search-container">
+    <form action="/buscar" method="GET">
+        <input type="search" placeholder="O que você procura?" name="q">
+        <button type="submit">Pesquisar</button>
+    </form>
+</div>
+    <h2 class="section-title">Próximos Eventos</h2>
+    
+
+    <div class="carousel">
+
+        <!-- Botão esquerda -->
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track-container">
+            <div class="carousel-track">
+
+                <!-- CARD 1 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/mutirao-limpeza.webp">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">15 de Maio, 2024</p>
+                        <h3>Limpeza da Praia da Reserva</h3>
+                        <p>Vamos unir forças para retirar resíduos plásticos e proteger a fauna marinha local.</p>
+                        <a href="#" class="btn-inscrever">Quero Participar</a>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/Workshop-Prevencao-e-Combate-a-Incendios-01.jpeg">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">22 de Maio, 2024</p>
+                        <h3>Compostagem Doméstica</h3>
+                        <p>Aprenda a transformar seu lixo orgânico em adubo rico.</p>
+                        <a href="#" class="btn-inscrever">Inscrever-se</a>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/download.jpeg">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">05 de Junho, 2024</p>
+                        <h3>Mercado Verde Local</h3>
+                        <p>Apoie produtores locais e alimentos saudáveis.</p>
+                        <a href="#" class="btn-inscrever">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/mutirao-limpeza.webp">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">10 de Junho, 2024</p>
+                        <h3>Plantio de Árvores</h3>
+                        <p>Ajude a reflorestar áreas urbanas.</p>
+                        <a href="#" class="btn-inscrever">Participar</a>
+                    </div>
+                </article>
+
+                <!-- CARD 5 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/download.jpeg">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">15 de Junho, 2024</p>
+                        <h3>Feira Sustentável</h3>
+                        <p>Produtos ecológicos e orgânicos.</p>
+                        <a href="#" class="btn-inscrever">Ver</a>
+                    </div>
+                </article>
+
+                <!-- CARD 6 -->
+                <article class="card">
+                    <div class="card-imagem">
+                        <img src="files/Workshop-Prevencao-e-Combate-a-Incendios-01.jpeg">
+                    </div>
+                    <div class="card-conteudo">
+                        <p class="data-evento">20 de Junho, 2024</p>
+                        <h3>Workshop Ambiental</h3>
+                        <p>Educação ambiental prática.</p>
+                        <a href="#" class="btn-inscrever">Entrar</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Botão direita -->
+        <button class="carousel-btn next">&#10095;</button>
+
+    </div>
+</main>
+
+    <footer>
+        <p>&copy; 2026 EcoAção - Juntos por um futuro sustentável. |  <a href="#">Inscrever-se</a> | <a href="#">Preferência de cookies</a> | <a href="#">Entre em contato</a> </p>
+        <p></p>
+    </footer>
+
+    <script>
+const track = document.querySelector('.carousel-track');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let cards = Array.from(document.querySelectorAll('.carousel .card'));
+const visibleCards = 3;
+
+let index = visibleCards;
+
+// 🔁 Clonar primeiros e últimos cards
+const firstClones = cards.slice(0, visibleCards).map(card => card.cloneNode(true));
+const lastClones = cards.slice(-visibleCards).map(card => card.cloneNode(true));
+
+// Adiciona clones
+lastClones.forEach(clone => track.prepend(clone));
+firstClones.forEach(clone => track.append(clone));
+
+// Atualiza lista
+cards = Array.from(document.querySelectorAll('.carousel .card'));
+
+// Ajuste inicial
+const cardWidth = cards[0].offsetWidth + 20;
+track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+// Botões
+nextBtn.addEventListener('click', () => {
+    index++;
+    moveCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+    index--;
+    moveCarousel();
+});
+
+function moveCarousel() {
+    track.style.transition = "transform 0.4s ease-in-out";
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+// Loop infinito suave
+track.addEventListener('transitionend', () => {
+    if (index >= cards.length - visibleCards) {
+        track.style.transition = "none";
+        index = visibleCards;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    if (index <= 0) {
+        track.style.transition = "none";
+        index = cards.length - (visibleCards * 2);
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+});
+</script>
+</body>
+</html>
