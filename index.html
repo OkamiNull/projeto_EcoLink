@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href=".css">
     <title>EcoLink - Eventos Ecológicos</title>
     <link rel="shortcut icon" href="files\logo.jpeg" type="image/jpeg">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -18,6 +19,7 @@
             <a href="#">Eventos</a>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
+            <a href="login.html">Login</a>
         </nav>
     </header>
 
@@ -136,61 +138,6 @@
         <p></p>
     </footer>
 
-    <script>
-const track = document.querySelector('.carousel-track');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
-
-let cards = Array.from(document.querySelectorAll('.carousel .card'));
-const visibleCards = 3;
-
-let index = visibleCards;
-
-// 🔁 Clonar primeiros e últimos cards
-const firstClones = cards.slice(0, visibleCards).map(card => card.cloneNode(true));
-const lastClones = cards.slice(-visibleCards).map(card => card.cloneNode(true));
-
-// Adiciona clones
-lastClones.forEach(clone => track.prepend(clone));
-firstClones.forEach(clone => track.append(clone));
-
-// Atualiza lista
-cards = Array.from(document.querySelectorAll('.carousel .card'));
-
-// Ajuste inicial
-const cardWidth = cards[0].offsetWidth + 20;
-track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-// Botões
-nextBtn.addEventListener('click', () => {
-    index++;
-    moveCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-    index--;
-    moveCarousel();
-});
-
-function moveCarousel() {
-    track.style.transition = "transform 0.4s ease-in-out";
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-
-// Loop infinito suave
-track.addEventListener('transitionend', () => {
-    if (index >= cards.length - visibleCards) {
-        track.style.transition = "none";
-        index = visibleCards;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-
-    if (index <= 0) {
-        track.style.transition = "none";
-        index = cards.length - (visibleCards * 2);
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-});
 </script>
 </body>
 </html>
