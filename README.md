@@ -51,9 +51,9 @@ Não há lógica de Back-end implementada nesta versão do repositório. As vali
 
 ## Banco de dados
 
-Este projeto atualmente não consome um Banco de Dados real.
+O sistema utiliza o MySQL como Sistema de Gerenciamento de Banco de Dados (SGBD) relacional para armazenar e estruturar as informações da aplicação, como registros de usuários, dados de organizadores e detalhes dos eventos ecológicos.
 
-Como a aplicação é estática nesta etapa, não há conexão com um SGBD (como MySQL, PostgreSQL ou MongoDB). Eventuais dados falsos para testes podem ser manipulados em memória através do JavaScript ou salvos no `localStorage` do navegador para simular o comportamento de uma aplicação completa.
+Para a administração e controle do banco de dados, o projeto conta com uma implementação do phpMyAdmin. Essa integração permite gerenciar as tabelas, executar consultas SQL e realizar a manutenção geral dos dados através de uma interface web gráfica e intuitiva, facilitando o processo de desenvolvimento e testes.
 
 ---
 
