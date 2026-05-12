@@ -1,4 +1,19 @@
+:root {
+    --verde-escuro: #1565C0;
+    --verde-medio: #0b9444;
+    --verde-claro: white;
+    --azul: #1565C0;
+    --bege: #EFE7DA;
+    --laranja: #EF6C00;
+}
 
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* Corpo */
 body {
@@ -8,6 +23,23 @@ body {
     background-position: center;   /* Centraliza a imagem */
     color: #333;
     line-height: 1.6;
+}
+
+body:before {
+    content: "";
+    position: st;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),      /* transparente */
+        #1B3F25             /* cor do fundo do body */
+    );
+
+    pointer-events: none;
 }
 
 #body a img {
@@ -37,82 +69,215 @@ nav a:hover {
     color: var(--verde-claro);
 }
 
-/* Estilos para a página de Login */
-.login-page {
-    background-color: #f4f7f6; /* Um fundo levemente acinzentado/esverdeado */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* Hero Section */
+.hero {
+    position: relative; /* necessário */
+
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url('files/Planeta_terra.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 70vh;
 }
 
-.login-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 👇 TRANSIÇÃO SUAVE */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),      /* transparente */
+        #1B3F25             /* cor do fundo do body */
+    );
+
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    margin-bottom: 10px;
+    
+}
+
+/* Container geral */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Título de seção */
+.section-title {
+    color: #ffffff;
+    border-bottom: 2px solid var(--verde-medio);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Grid de eventos */
+.grid-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card de Evento */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagem do card */
+.card-imagem img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo do card */
+.card-conteudo {
     padding: 20px;
 }
 
-.login-card {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.login-card h1 {
-    color: #2d5a27; /* Verde ecológico */
+.card-conteudo h3 {
+    color: var(--verde-escuro);
     margin-bottom: 10px;
 }
 
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
+/* Data do evento */
+.data-evento {
+    color: var(--azul);
     font-weight: bold;
-    color: #444;
+    font-size: 0.9rem;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: #2d5a27;
+/* Botão */
+.btn-inscrever {
+    display: inline-block;
+    background-color: var(--laranja);
     color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-inscrever:hover {
+    background-color: #d35400;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--verde-escuro);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    margin-top: 50px;
+}
+
+footer a:hover{color: #d35400;}
+footer a:visited{color: #000;}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Cada card ocupa 1/3 da tela */
+.carousel .card {
+    min-width: calc(33.333% - 13px);
+}
+
+/* Botões */
+.carousel-btn {
+    position: absolute;
+    background-color: var(--laranja);
     border: none;
-    border-radius: 6px;
-    font-size: 18px;
+    color: white;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: #d35400;
+}
+
+.prev {
+    left: -20px;
+}
+
+.next {
+    right: -20px;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Estilo do campo de entrada */
+input[type="search"] {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 25px 0 0 25px; /* Arredonda apenas o lado esquerdo */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Efeito quando o usuário clica para digitar */
+input[type="search"]:focus {
+    border-color: #1565C0;
+}
+
+/* Estilo do botão */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: 2px solid #007BFF;
+    border-radius: 0 25px 25px 0; /* Arredonda apenas o lado direito */
     cursor: pointer;
     transition: background 0.3s;
 }
 
-.btn-login:hover {
-    background-color: #1e3d1a;
-}
-
-.login-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.login-footer a {
-    color: #2d5a27;
-    text-decoration: none;
+button:hover {
+    background-color: #0056b3;
 }
