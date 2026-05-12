@@ -1,0 +1,50 @@
+<!-- views/criar_evento.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Evento</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Criar Novo Evento</div>
+        <a href="dashboard_criador.php" class="logout-btn">← Voltar</a>
+    </div>
+    
+    <div class="container">
+        <h2>Criar Evento</h2>
+        
+        <!-- MENSAGEM_AREA -->
+        
+        <form method="POST" action="">
+            <div class="form-group">
+                <label>Nome do Evento *</label>
+                <input type="text" name="nome_evento" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="descricao" rows="4" cols="50" placeholder="Descreva o evento..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Endereço *</label>
+                <input type="text" name="endereco" placeholder="Rua, número, bairro, cidade" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Data e Hora do Evento *</label>
+                <input type="datetime-local" name="data_evento" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Capacidade Máxima *</label>
+                <input type="number" name="capacidade_maxima" min="1" required>
+            </div>
+            
+            <button type="submit">Criar Evento</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; }
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.container { max-width: 600px; margin: 50px auto; padding: 20px; }
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.user-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border-left: 4px solid #667eea;
+}
+
+/* Estilos para Eventos - Adicionar no final do style.css */
+
+/* Seção de eventos */
+.eventos-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.eventos-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-evento {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.form-evento h4 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.form-evento .form-group {
+    margin-bottom: 15px;
+}
+
+.form-evento input {
+    background: white;
+}
+
+.btn-criar {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    width: auto;
+    padding: 10px 20px;
+}
+
+.btn-criar:hover {
+    transform: translateY(-2px);
+}
+
+/* Lista de eventos */
+.lista-eventos {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-evento {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.card-evento:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.card-evento h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card-evento p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.card-evento .endereco {
+    color: #888;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-evento .data {
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.btn-deletar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    width: auto;
+}
+
+.btn-deletar:hover {
+    background: #d32f2f;
+    transform: none;
+}
+
+.sem-eventos {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    color: #999;
+}
+
+/* Grid para eventos */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}

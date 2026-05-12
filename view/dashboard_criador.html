@@ -1,0 +1,106 @@
+<!-- views/dashboard_criador.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Criador de Eventos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Meus Eventos - Criador</div>
+        <div class="user-info">
+            <span class="user-name"><!-- NOME_USUARIO --></span>
+            <a href="../php/logout.php" class="logout-btn">Sair</a>
+        </div>
+    </div>
+    
+    <div class="container container-large">
+        <!-- CARD DO PERFIL DO CRIADOR -->
+        <div class="perfil-criador-container">
+            <!-- Área da imagem -->
+            <div class="perfil-criador-imagem">
+                <img src="../assets/avatar_criador.jpeg" alt="Logo da empresa" id="fotoCriador" onerror="this.src='https://via.placeholder.com/120/667eea/white?text=LOGO'">
+            </div>
+            
+            <!-- Área de informações -->
+            <div class="perfil-criador-info">
+                <h3>
+                    Bem-vindo(a), <span id="nomeCriador"><!-- NOME_USUARIO --></span>!
+                    <span class="badge-criador">Criador</span>
+                </h3>
+                <div class="boas-vindas">Gerencie seus eventos e acompanhe as inscrições!</div>
+                
+                <div class="info-criador-card">
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Email:</div>
+                        <div class="info-criador-value" id="emailCriador"><!-- EMAIL_USUARIO --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Razão Social:</div>
+                        <div class="info-criador-value" id="razaoSocial"><!-- RAZAO_SOCIAL --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Nome Fantasia:</div>
+                        <div class="info-criador-value" id="nomeFantasia"><!-- NOME_FANTASIA --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">CNPJ:</div>
+                        <div class="info-criador-value" id="cnpj"><!-- CNPJ --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Telefone:</div>
+                        <div class="info-criador-value" id="telefone"><!-- TELEFONE --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Endereço:</div>
+                        <div class="info-criador-value" id="endereco"><!-- ENDERECO --></div>
+                    </div>
+                    <div class="info-criador-item">
+                        <div class="info-criador-label">Cadastro:</div>
+                        <div class="info-criador-value" id="dataCadastro"><!-- DATA_CADASTRO --></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- STATS CARDS -->
+        <div class="stats-criador">
+            <div class="stat-criador-card">
+                <div class="numero" id="totalEventos"><!-- TOTAL_EVENTOS --></div>
+                <div class="rotulo">Eventos Criados</div>
+            </div>
+            <div class="stat-criador-card verde">
+                <div class="numero" id="totalInscritos"><!-- TOTAL_INSCRITOS --></div>
+                <div class="rotulo">Inscrições Totais</div>
+            </div>
+            <div class="stat-criador-card roxo">
+                <div class="numero" id="eventosAtivos"><!-- EVENTOS_ATIVOS --></div>
+                <div class="rotulo">Eventos Ativos</div>
+            </div>
+            <div class="stat-criador-card laranja">
+                <div class="numero" id="capacidadeTotal"><!-- CAPACIDADE_TOTAL --></div>
+                <div class="rotulo">Vagas Totais</div>
+            </div>
+        </div>
+        
+        <!-- MENU DO CRIADOR -->
+        <div class="card">
+            <div class="menu">
+                <a href="../php/criar_evento.php">Criar Novo Evento</a>
+                <a href="../php/meus_eventos.php"> Meus Eventos</a>
+            </div>
+            
+            <!-- MENSAGEM_AREA -->
+            
+            <div class="info" style="margin-top: 20px; text-align: center;">
+                <p><strong>Dicas rápidas:</strong></p>
+                <p>• Use o menu <strong>"Criar Novo Evento"</strong> para adicionar eventos</p>
+                <p>• Acesse <strong>"Meus Eventos"</strong> para ver a lista de inscritos</p>
+                <p>• Os eventos com data futura aparecem para os usuários</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

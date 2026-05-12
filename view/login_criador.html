@@ -1,0 +1,38 @@
+<!-- views/login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema de Eventos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="subtitulo">Acesse sua conta</div>
+        
+        <!-- MENSAGEM_AREA -->
+        
+        <form method="POST" action="">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>CNPJ</label>
+                <input type="cnpj" name="cnpj" required>
+            </div>
+            <div class="form-group">
+                <label>Senha</label>
+                <input type="password" name="senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        
+        <div class="link">
+            <a href="../php/login.php">Sou usuário comum</a><br><br>
+            <a href="../php/cadastrar_criador.php">não tem conta? - Cadastrar com CNPJ</a>
+        </div>
+    </div>
+</body>
+</html>

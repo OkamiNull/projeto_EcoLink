@@ -1,0 +1,64 @@
+<!-- views/dashboard_usuario.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Usuário</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Meus Eventos</div>
+        <div class="user-info">
+            <span class="user-name"><!-- NOME_USUARIO --></span>
+            <a href="../php/logout.php" class="logout-btn">Sair</a>
+        </div>
+    </div>
+    
+    <div class="container container-large">
+        <!-- CARD DO PERFIL COM IMAGEM -->
+        <div class="perfil-container">
+            <!-- Área da imagem -->
+            <div class="perfil-imagem">
+                <img src="../assets/avatar_usuario.jpeg" alt="Foto de perfil" id="fotoPerfil">
+
+            </div>
+            
+            <!-- Área de informações -->
+            <div class="perfil-info">
+                <h3>Bem-vindo(a), <span id="nomeUsuario"><!-- NOME_USUARIO --></span>!</h3>
+                <div class="boas-vindas">Que bom ter você por aqui!</div>
+                
+                <div class="info-card">
+                    <div class="info-item">
+                        <div class="info-label">Email:</div>
+                        <div class="info-value" id="emailUsuario"><!-- EMAIL_USUARIO --></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Cadastro:</div>
+                        <div class="info-value" id="dataCadastro"><!-- DATA_CADASTRO --></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Eventos inscritos:</div>
+                        <div class="info-value" id="totalEventos"><!-- TOTAL_EVENTOS --></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MENU -->
+        <div class="card">
+            <div class="menu">
+                <a href="../php/listar_eventos.php">Ver Eventos Disponíveis</a>
+            </div>
+            
+            <!-- MENSAGEM_AREA -->
+            
+            <h3>Meus Eventos Inscritos</h3>
+            <div class="eventos-grid">
+                <!-- LISTA_INSCRICOES -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
