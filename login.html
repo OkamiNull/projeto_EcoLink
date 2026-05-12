@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css"> <!-- Use o seu arquivo CSS -->
+    <link rel="stylesheet" href="login.css"> 
     <title>EcoLink - Login</title>
 </head>
 <body class="login-page">
 
-    <header>
+    <header class="navbar">
         <div class="logo">
             <h2>♻️ EcoLink</h2>
         </div>
         <nav>
-            <a href=".html">Voltar ao Início</a>
+            <ul style="list-style: none;">
+                <li><a href="index.html">Voltar ao Início</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -36,15 +38,17 @@
                 <button type="submit" class="btn-login">Entrar</button>
                 
                 <div class="login-footer">
-                    <a href="#">Esqueceu a senha?</a>
-                    <span>Ainda não tem conta? <a href="#">Cadastre-se</a></span>
+                    <a href="esqueci.html">Esqueceu a senha?</a>
+                    <br> <span>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></span>
                 </div>
             </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 EcoAção - Juntos por um futuro sustentável.</p>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoAção - Juntos por um futuro sustentável.</p>
+        </div>
     </footer>
 
 </body>
